@@ -9,13 +9,13 @@ namespace mantis_tests
         [Test]
         public void TestAccountRegistration()
         {
-            String baseName = "testuser12";
+            String baseName = "sa";
 
             AccountData account = new AccountData()
             {
                 
                 Name = baseName,
-                Password = "password",
+                Password = "secret",
                 Email = baseName + "@localhost.localdomain"
             };
 

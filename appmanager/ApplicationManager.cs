@@ -19,6 +19,9 @@ namespace mantis_tests
         public RegistrationHelper Registration { get; private set; }
         public JamesHelper James { get; private set; }
         public MailHelper Mail { get; private set; }
+        public LoginHelper Auth { get; private set; }
+        public ManagementMenuHelper Menu { get; private set; }
+        public ProjectManagementHelper Project { get; private set; }
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
@@ -29,6 +32,9 @@ namespace mantis_tests
             Registration = new RegistrationHelper(this);
             James = new JamesHelper(this);
             Mail = new MailHelper(this);
+            Auth = new LoginHelper(this);
+            Menu = new ManagementMenuHelper(this);
+            Project = new ProjectManagementHelper(this);
         }
 
         ~ApplicationManager()
