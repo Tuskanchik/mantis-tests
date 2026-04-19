@@ -1,0 +1,61 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "../../mantisconnect.wsdl"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, Mantis"
+    ],
+    "references": [
+      "BouncyCastle.Crypto, {BouncyCastle, 1.7.0}",
+      "Microsoft.ApplicationInsights, {Microsoft.ApplicationInsights, 2.22.0}",
+      "Microsoft.Bcl.AsyncInterfaces, {Microsoft.Bcl.AsyncInterfaces, 5.0.0}",
+      "Microsoft.Extensions.ObjectPool, {Microsoft.Extensions.ObjectPool, 5.0.10}",
+      "Microsoft.IdentityModel.Logging, {Microsoft.IdentityModel.Logging, 6.8.0}",
+      "Microsoft.IdentityModel.Protocols.WsTrust, {Microsoft.IdentityModel.Protocols.WsTrust, 6.8.0}",
+      "Microsoft.IdentityModel.Tokens, {Microsoft.IdentityModel.Tokens, 6.8.0}",
+      "Microsoft.IdentityModel.Tokens.Saml, {Microsoft.IdentityModel.Tokens.Saml, 6.8.0}",
+      "Microsoft.IdentityModel.Xml, {Microsoft.IdentityModel.Xml, 6.8.0}",
+      "Microsoft.Testing.Extensions.MSBuild, {Microsoft.Testing.Platform.MSBuild, 1.5.3}",
+      "Microsoft.Testing.Extensions.Telemetry, {Microsoft.Testing.Extensions.Telemetry, 1.5.3}",
+      "Microsoft.Testing.Extensions.TrxReport.Abstractions, {Microsoft.Testing.Extensions.TrxReport.Abstractions, 1.5.3}",
+      "Microsoft.Testing.Extensions.VSTestBridge, {Microsoft.Testing.Extensions.VSTestBridge, 1.5.3}",
+      "Microsoft.Testing.Platform, {Microsoft.Testing.Platform, 1.5.3}",
+      "Microsoft.TestPlatform.CommunicationUtilities, {Microsoft.TestPlatform.TestHost, 17.14.0}",
+      "Microsoft.TestPlatform.CoreUtilities, {Microsoft.TestPlatform.ObjectModel, 17.14.0}",
+      "Microsoft.TestPlatform.CrossPlatEngine, {Microsoft.TestPlatform.TestHost, 17.14.0}",
+      "Microsoft.TestPlatform.PlatformAbstractions, {Microsoft.TestPlatform.ObjectModel, 17.14.0}",
+      "Microsoft.TestPlatform.Utilities, {Microsoft.TestPlatform.TestHost, 17.14.0}",
+      "Microsoft.VisualStudio.CodeCoverage.Shim, {Microsoft.CodeCoverage, 17.14.0}",
+      "Microsoft.VisualStudio.TestPlatform.Common, {Microsoft.TestPlatform.TestHost, 17.14.0}",
+      "Microsoft.VisualStudio.TestPlatform.ObjectModel, {Microsoft.TestPlatform.ObjectModel, 17.14.0}",
+      "Moq, {Moq, 4.2.1510.2205}",
+      "Newtonsoft.Json, {Newtonsoft.Json, 13.0.3}",
+      "nunit.framework, {NUnit, 4.5.1}",
+      "nunit.framework.legacy, {NUnit, 4.5.1}",
+      "OpaqueMail, {OpaqueMail, 2.4.3}",
+      "RazorHosting, {SimpleBrowser, 0.5.61}",
+      "SimpleBrowser, {SimpleBrowser, 0.5.61}",
+      "SimpleBrowser.WebDriver, {SimpleBrowser.WebDriver, 0.5.43}",
+      "System.Security.Cryptography.Pkcs, {System.Security.Cryptography.Pkcs, 10.0.6}",
+      "System.Security.Cryptography.Xml, {System.Security.Cryptography.Xml, 6.0.1}",
+      "System.ServiceModel, {System.ServiceModel.Primitives, 4.10.3}",
+      "System.ServiceModel.Duplex, {System.ServiceModel.Duplex, 4.10.3}",
+      "System.ServiceModel.Federation, {System.ServiceModel.Federation, 4.10.3}",
+      "System.ServiceModel.Http, {System.ServiceModel.Http, 4.10.3}",
+      "System.ServiceModel.NetTcp, {System.ServiceModel.NetTcp, 4.10.3}",
+      "System.ServiceModel.Primitives, {System.ServiceModel.Primitives, 4.10.3}",
+      "System.ServiceModel.Security, {System.ServiceModel.Security, 4.10.3}",
+      "testhost, {Microsoft.TestPlatform.TestHost, 17.14.0}",
+      "WebDriver, {Selenium.WebDriver, 4.43.0}",
+      "WebDriver.Support, {Selenium.Support, 4.43.0}"
+    ],
+    "sync": true,
+    "targetFramework": "net10.0",
+    "typeReuseMode": "All"
+  }
+}

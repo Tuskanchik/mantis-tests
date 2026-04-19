@@ -9,7 +9,7 @@ namespace mantis_tests
         [Test]
         public void TestAccountRegistration()
         {
-            String baseName = "sa";
+            String baseName = "testUser";
 
             AccountData account = new AccountData()
             {
@@ -18,6 +18,13 @@ namespace mantis_tests
                 Password = "secret",
                 Email = baseName + "@localhost.localdomain"
             };
+
+            List<AccountData> accounts = app.Admin.GetAllAccounts();
+            AccountData existingAccount = accounts.Find(x => x.Name == account.Name);
+            if (existingAccount != null)
+            {
+                app.Admin.DeleteAccount(existingAccount);
+            }
 
             app.James.Delete(account);
             app.James.Add(account);

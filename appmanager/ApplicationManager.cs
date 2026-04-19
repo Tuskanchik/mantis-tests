@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 using System.Threading;
+using System.Buffers.Text;
 
 namespace mantis_tests
 {
@@ -22,19 +23,23 @@ namespace mantis_tests
         public LoginHelper Auth { get; private set; }
         public ManagementMenuHelper Menu { get; private set; }
         public ProjectManagementHelper Project { get; private set; }
+        public AdminHelper Admin { get; private set; }
+        public APIHelper API { get; set; }
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
         private ApplicationManager()
         {
             driver = new FirefoxDriver();
-            baseURL = "http://localhost";
+            baseURL = "http://localhost/mantisbt-2.28.1";
             Registration = new RegistrationHelper(this);
             James = new JamesHelper(this);
             Mail = new MailHelper(this);
             Auth = new LoginHelper(this);
             Menu = new ManagementMenuHelper(this);
             Project = new ProjectManagementHelper(this);
+            Admin = new AdminHelper(this, baseURL);
+            API = new APIHelper(this);
         }
 
         ~ApplicationManager()
@@ -54,7 +59,7 @@ namespace mantis_tests
             if (! app.IsValueCreated)
             {
                 ApplicationManager newInstance = new ApplicationManager();
-                newInstance.driver.Url = "http://localhost/mantisbt-2.28.1/login_page.php";
+                newInstance.driver.Url = newInstance.baseURL + "/login_page.php";
                 app.Value = newInstance;
             }
             return app.Value;
