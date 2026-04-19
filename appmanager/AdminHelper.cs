@@ -64,7 +64,7 @@ namespace mantis_tests
             driver.FindElement(By.CssSelector("input.btn")).Click();
         }
 
-        private IWebDriver OpenAppAndLogin()
+        public IWebDriver OpenAppAndLogin()
         {
             var options = new ChromeOptions();
             options.AddArgument("--headless=new");

@@ -1,6 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework.Internal.Execution;
+using OpenQA.Selenium;
 using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
+using System.ServiceModel;
 using System.Text;
 using System.Xml.Linq;
 
@@ -36,26 +39,42 @@ namespace mantis_tests
         {
             if (CheckProjectExistsInProjectsList(project))
             {
-                RemoveProject(project);
+                manager.API.DeleteProject(project);
             }
 
         }
 
         public bool CheckProjectExistsInProjectsList(ProjectData project)
         {
-            var elements = driver.FindElements(By.XPath("//a[text()='" + project.Name + "']"));
-            if (elements.Count > 0)
+            AccountData account = new AccountData()
             {
-                return true;
+                Name = "administrator",
+                Password = "secret"
+            };
+
+            List<ProjectData> projects = manager.API.GetAllProjects(account);
+            foreach (ProjectData proj in projects)
+            {
+                if (proj.Name == project.Name)
+                {
+                    return true;
+                }
             }
             return false;
+
+            //var elements = driver.FindElements(By.XPath("//a[text()='" + project.Name + "']"));
+            //if (elements.Count > 0)
+            //{
+            //    return true;
+            //}
+            //return false;
         }
 
         public void CreateProjectIfNotExists(ProjectData project)
         {
             if (!CheckProjectExistsInProjectsList(project))
             {
-                CreateProject(project);
+                manager.API.CreateNewProject(project);
             }
         }
     }

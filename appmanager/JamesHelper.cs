@@ -17,7 +17,6 @@ namespace mantis_tests
             }
             TelnetConnection telnet = LoginToJames();
             telnet.WriteLine("adduser " + account.Name + " " + account.Password);
-            //System.Console.Out.WriteLine(telnet.Read());
             System.Diagnostics.Trace.WriteLine(telnet.Read());
 
         }
@@ -30,7 +29,6 @@ namespace mantis_tests
             }
             TelnetConnection telnet = LoginToJames();
             telnet.WriteLine("deluser " + account.Name);
-            //System.Console.Out.WriteLine(telnet.Read());
             System.Diagnostics.Trace.WriteLine(telnet.Read());
         }
 
@@ -41,9 +39,6 @@ namespace mantis_tests
             TelnetConnection telnet = LoginToJames();
             telnet.WriteLine("verify " + account.Name);
             String s = telnet.Read();
-            //System.Console.Out.WriteLine(s);
-            //System.Diagnostics.Trace.WriteLine(s);
-            //Console.Out.Write(s);
             System.Diagnostics.Debug.WriteLine(s);
             return !s.Contains("User " + account.Name + " does not exist\r\n");
         }
@@ -51,13 +46,10 @@ namespace mantis_tests
         private TelnetConnection LoginToJames()
         {
             TelnetConnection telnet = new TelnetConnection("localhost", 4555);
-            //System.Console.Out.WriteLine(telnet.Read());
             System.Diagnostics.Trace.WriteLine(telnet.Read());
             telnet.WriteLine("root");
-            //System.Console.Out.WriteLine(telnet.Read());
             System.Diagnostics.Trace.WriteLine(telnet.Read());
             telnet.WriteLine("root");
-            //System.Console.Out.WriteLine(telnet.Read());
             System.Diagnostics.Trace.WriteLine(telnet.Read());
             return telnet;
         }

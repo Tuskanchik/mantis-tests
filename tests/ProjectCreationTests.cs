@@ -17,13 +17,14 @@ namespace mantis_tests
 
             ProjectData project = new ProjectData()
             {
-                Name = "testProject",
+                Name = "testProject4",
             };
+
+            app.Project.RemoveProjectIfExists(project);
 
             app.Auth.Login(adminAccount);
             app.Menu.GoToManageOverviewPage();
             app.Menu.GoToProjectsPage();
-            app.Project.RemoveProjectIfExists(project);
 
             Assert.AreEqual(app.Project.CheckProjectExistsInProjectsList(project), false);
 
