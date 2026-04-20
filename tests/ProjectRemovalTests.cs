@@ -9,12 +9,7 @@ namespace mantis_tests
         [Test]
         public void RemovalProjectTest()
         {
-            AccountData adminAccount = new AccountData()
-            {
-
-                Name = "sa",
-                Password = "secret",
-            };
+            AccountData account = app.Auth.GetAdminAccount();
 
             ProjectData project = new ProjectData()
             {
@@ -23,7 +18,7 @@ namespace mantis_tests
 
             app.Project.CreateProjectIfNotExists(project);
 
-            app.Auth.Login(adminAccount);
+            app.Auth.Login(account);
             app.Menu.GoToManageOverviewPage();
             app.Menu.GoToProjectsPage();
 

@@ -52,11 +52,7 @@ namespace mantis_tests
 
         public void CreateNewProject(ProjectData project)
         {
-            AccountData account = new AccountData()
-            {
-                Name = "administrator",
-                Password = "secret"
-            };
+            AccountData account = manager.Auth.GetAdminAccount();
 
             var client = GetMantisClient();
 
@@ -68,11 +64,7 @@ namespace mantis_tests
 
         public void DeleteProject(ProjectData project)
         {
-            AccountData account = new AccountData()
-            {
-                Name = "administrator",
-                Password = "secret"
-            };
+            AccountData account = manager.Auth.GetAdminAccount();
 
             var client = GetMantisClient();
 
@@ -82,12 +74,7 @@ namespace mantis_tests
         public string GetProjectId(ProjectData project)
         {
             string id = "";
-
-            AccountData account = new AccountData()
-            {
-                Name = "administrator",
-                Password = "secret"
-            };
+            AccountData account = manager.Auth.GetAdminAccount();
 
             var client = GetMantisClient();
 

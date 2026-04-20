@@ -12,11 +12,7 @@ namespace mantis_tests
 
         public void AddNewIssue()
         {
-            AccountData account = new AccountData()
-            {
-                Name = "administrator",
-                Password = "secret"
-            };
+            AccountData account = app.Auth.GetAdminAccount();
 
             ProjectData project = new ProjectData()
             {

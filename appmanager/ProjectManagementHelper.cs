@@ -46,11 +46,7 @@ namespace mantis_tests
 
         public bool CheckProjectExistsInProjectsList(ProjectData project)
         {
-            AccountData account = new AccountData()
-            {
-                Name = "administrator",
-                Password = "secret"
-            };
+            AccountData account = manager.Auth.GetAdminAccount();
 
             List<ProjectData> projects = manager.API.GetAllProjects(account);
             foreach (ProjectData proj in projects)
@@ -61,13 +57,6 @@ namespace mantis_tests
                 }
             }
             return false;
-
-            //var elements = driver.FindElements(By.XPath("//a[text()='" + project.Name + "']"));
-            //if (elements.Count > 0)
-            //{
-            //    return true;
-            //}
-            //return false;
         }
 
         public void CreateProjectIfNotExists(ProjectData project)

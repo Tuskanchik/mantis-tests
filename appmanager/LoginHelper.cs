@@ -36,5 +36,15 @@ namespace mantis_tests
         {
             driver.FindElement(By.ClassName("btn-success")).Click();
         }
+
+        public AccountData GetAdminAccount()
+        {
+            AccountData adminAccount = new AccountData()
+            {
+                Name = "administrator",
+                Password = "secret"
+            };
+            return adminAccount;
+        }
     }
 }

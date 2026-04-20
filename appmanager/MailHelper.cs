@@ -26,7 +26,7 @@ namespace mantis_tests
                 }
                 else
                 {
-                    System.Threading.Thread.Sleep(3000);
+                    Thread.Sleep(3000);
                 }
             }
             return null;
